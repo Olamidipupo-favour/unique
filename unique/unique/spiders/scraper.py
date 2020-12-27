@@ -27,5 +27,4 @@ class unique(CrawlSpider):
         with engine.connect() as conn:
             result=conn.execute(s.insert(essential_info).values(name=item['name'],desc=item['desc'],url=item['url']))
             conn.commit()
-            print("added")
         return item
