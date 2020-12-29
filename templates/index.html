@@ -2,18 +2,18 @@
 <html>
  <head> 
   <meta charset="UTF-8"> 
-  <title>CODE CUBE</title> 
+  <title>{% if q %} {{q}} {% endif %} -CODE CUBE</title> 
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <meta name="author" content="ajayi raphael temitope"> 
   <meta name="description" content="unique browser">
-  <link rel="shortcut icon" href="{{ url_for('static',filename='images/favicon.ico'}}" type="image/vnd.microsoft.icon"> 
+  <link rel="shortcut icon" href="{{ url_for('static',filename='images/favicon.ico') }}" type="image/vnd.microsoft.icon"> 
   <!--@bootstrapCss--> 
-  <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css' }}"> 
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}"> 
   <!--custom css--> 
-  <link rel="stylesheet" href="{{ url_for('static',filename='style.css' }}"> 
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"> 
  </head> 
  <body> 
-  <center><img class="unique" src="img/unique.png">  </center>
+  <center><img class="unique" src="{{ url_for('static',filename='img/unique.png') }}">  </center>
   <header> 
    <div> 
     <br>
@@ -35,7 +35,7 @@
   </header> 
   <!-- search box --> 
   <div> 
-  <form name="search" method="POST" action="index.html">
+  <form name="search" method="POST" action="{{ url_for('index') }}">
    <input id="search" type="text" onclick="searchBox()" placeholder=" enter search" value="{%if q %} {{ q }} {% endif %}" name="q">
    <input class="btn" type="submit" value="🔍"> 
    </form>
@@ -44,33 +44,39 @@
   <br> 
   <!--icons section--> 
   <div class="section" id="icons"> 
-   <div>{% if len(res)==0 %} 
-    <a href="https://www.sololearn.com/" target="_blank"> <img alt="SoloLearn" src="{{ url_for('static',filename='img/sololearn.jpg' }}"> </a> 
-    <a href="https://www.facebook.com/our_page" targt="_blank"> <img alt="Facebook" src="{{ url_for('static',filename='img/facebook.jpg' }}"> </a> 
-    <a href="https://www.twitter.com/our_page" targt="_blank"> <img alt="Twitter" src="{{ url_for('static',filename='img/Twitter.jpg' }}"> </a> 
-    <a href="https://www.suasive.in/" target="_blank"> <img alt="Suasive" src="{{ url_for('static',filename='img/suasive.png' }}"> </a> 
+   <div>{% if not q %} 
+    <a href="https://www.sololearn.com/" target="_blank"> <img alt="SoloLearn" src="{{ url_for('static',filename='img/sololearn.jpg') }}"> </a> 
+    <a href="https://www.facebook.com/our_page" targt="_blank"> <img alt="Facebook" src="{{ url_for('static',filename='img/facebook.jpg') }}"> </a> 
+    <a href="https://www.twitter.com/our_page" targt="_blank"> <img alt="Twitter" src="{{ url_for('static',filename='img/Twitter.jpg') }}"> </a> 
+    <a href="https://www.suasive.in/" target="_blank"> <img alt="Suasive" src="{{ url_for('static',filename='img/suasive.png') }}"> </a> 
     <br>
     <br>
     <br> 
-    <a href="https://www.github.com/CODECUBE001" target="_blank"> <img alt="Github" src="{{ url_for('static',filename='img/git.jpg' }}"> </a> 
-    <a href="https://www.dragon-lang.org/"> <img src="{{ url_for('static',filename='img/dragon.png' }}" alt="Dragon"></a> 
-    <a href="https://www.getbootstrap.com/" target="_blank"> <img alt="Bootstrap" src="{{ url_for('static',filename='img/bootstrap.png' }}"> </a> 
-    <a href="https://www.python.org/"> <img alt="Python" src="{{ url_for('static',filename='img/python.jpg' }}"> </a> 
+    <a href="https://www.github.com/CODECUBE001" target="_blank"> <img alt="Github" src="{{ url_for('static',filename='img/git.jpg') }}"> </a> 
+    <a href="https://www.dragon-lang.org/"> <img src="{{ url_for('static',filename='img/dragon.png') }}" alt="Dragon"></a> 
+    <a href="https://www.getbootstrap.com/" target="_blank"> <img alt="Bootstrap" src="{{ url_for('static',filename='img/bootstrap.png') }}"> </a> 
+    <a href="https://www.python.org/"> <img alt="Python" src="{{ url_for('static',filename='img/python.jpg') }}"> </a> 
+<center>
+{% elif not res[0] %}
+<div class="none">NO RESULTS FOUND</div>
     {% else %}
     {% for i in res %}
-    <div class="url"><a href={{ i['url'] }}>{{ i['link'] }} </a></div><hr><p><div class="preface">{{ i['name'] }} <hr> {{ i['desc'] }} </div></p>
+<div class="result">
+    <a href={{ i[2] }}>{{ i[2] }} ------ {{ i[0] }} </a></div><hr><p><div class="line"></div><div class="description">{{ i[1] }}</div>
+</div>
     {% endfor %}
     {% endif %}
    </div> 
   </div> 
   <!-- icons section end --> 
   <br>
-  <br> 
+  <br>
+</center> 
   <!--main js--> 
-  <script src=" {{ url_for('static',filename='main.js' }}">
+  <script src=" {{ url_for('static',filename='main.js') }}">
 </script>  
   <footer> 
-   <p class="programminghero"><a href="http://unique .ml">&copy Unique Internet services</a></p> 
+   <p class="programminghero"><a href="http://uniqueinternetconcepts.ml">&copy Unique Internet services</a></p> 
   </footer>
  </body>
 </html>
