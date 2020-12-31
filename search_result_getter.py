@@ -61,6 +61,5 @@ def index():
 @app.errorhandler(404)
 def err_404(e):
    return redirect(url_for("index"))
-app.run()
 
 
