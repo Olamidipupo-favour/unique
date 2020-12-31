@@ -13,8 +13,6 @@ Flask-SQLAlchemy==2.4.0
 Flask-WTF==0.14.3
 Jinja2==2.10.1
 lxml==4.5.0
-lz4==3.0.2+dfsg
-Mako==1.1.2
 Markdown==3.2.1
 MarkupSafe==1.1.1
 maxminddb==1.4.1
