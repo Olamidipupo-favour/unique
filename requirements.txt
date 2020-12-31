@@ -15,7 +15,6 @@ Jinja2==2.10.1
 lxml==4.5.0
 Markdown==3.2.1
 MarkupSafe==1.1.1
-maxminddb==1.4.1
 mysqlclient==1.4.4
 psycopg2==2.8.5
 requests-file==1.5.1
@@ -30,3 +29,4 @@ Twisted==18.9.0
 websocket-client==0.53.0
 WebTest==2.0.34
 Werkzeug==1.0.0
+gunicorn
