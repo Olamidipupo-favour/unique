@@ -24,6 +24,17 @@ def mwatch(d:str,d1:str,d2:str):
     if(word_count>0 and word_count > floor(len(d.split())/2)):
         return True
 def tfidf(d):
+    #g=d
+    #d=[i[2] for i in g]
+    #t={}
+    #for i in g:
+       #print(i)
+       #k=d.count(i[2])
+       #t.update({i[2]:k})
+    #j=t.keys()
+    #y=t.values()  
+    #t=dict(zip(j,sorted(list(y))))
+    #print(str(t))
     return d
     #will return a tfidf later in future.
 def perfect_result(search):
@@ -49,7 +60,7 @@ def index():
         return render_template('index.html')
 @app.errorhandler(404)
 def err_404(e):
-   return render_template('err404.html'),  404
-app.run(debug=True)
+   return redirect(url_for("index"))
+app.run()
 
 

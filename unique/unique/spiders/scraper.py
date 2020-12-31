@@ -10,7 +10,7 @@ class unique(CrawlSpider):
     def parse_item(self,response):
         item={}
         item['name']=response.xpath('//title/text()').extract()[0]
-        item['desc']=response.xpath('//body/text()').extract()[:100][0].replace("\r","").replace("\n","").replace("\t","")
+        item['desc']=response.xpath('//body/text()').extract()[:300][0].replace("\r","").replace("\n","").replace("\t","")
         item['url']=response.url
         print(item)
         en="mysql://dipo:dipo@localhost/dipo" #the engine.

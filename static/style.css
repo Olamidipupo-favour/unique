@@ -23,7 +23,7 @@
     color: red;
 }
     body{
-        background-color:#efefef;
+        background-color:black;
         font-family:sans-serif;
     }
 /*head*/
@@ -31,7 +31,11 @@
         text-align: center;
         color: grey;
     }
-
+.zeta{
+    color: white;
+    text-align: center;
+    font-family: proxima;
+}
 /*head ended*/
 
 /*icons section*/
@@ -81,7 +85,7 @@
         width: 10%;
         outline: none;
     }
-    .unique{height:100px ;
+    .unique{height:200px ;
             
     }
     .result {
