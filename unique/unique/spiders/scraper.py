@@ -15,4 +15,3 @@ class unique(CrawlSpider):
         item[2]=response.url
         print(item)
         db.child(child).push(item)
-        return item

@@ -1,7 +1,7 @@
 from math import floor
 import inito
 def getSearchResult():
-    return [i.val() for i in db.child(child).each()]
+    return [i.val() for i in db.child(child).get().each()]
 def mwatch(d:str,d1:str,d2:str):
     d=d.strip()
     word_count=0
