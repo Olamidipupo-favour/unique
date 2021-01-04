@@ -2,7 +2,7 @@
 import scrapy
 from scrapy.spiders import CrawlSpider,Rule
 from scrapy.linkextractors import LinkExtractor
-import init
+import inito
 class unique(CrawlSpider):
     name="unique"
     start_urls=['https://en.wikipedia.org/wiki/Main_Page','https://www.google.com','https://duckduckgo.com'] #will be changing it to wikipedia in the final release.

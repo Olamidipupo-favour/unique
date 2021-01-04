@@ -1,5 +1,5 @@
 from math import floor
-import init
+import inito
 def getSearchResult():
     return [i.val() for i in db.child(child).each()]
 def mwatch(d:str,d1:str,d2:str):
