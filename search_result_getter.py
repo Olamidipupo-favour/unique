@@ -1,20 +1,7 @@
 from math import floor
+import init
 def getSearchResult():
-    import sqlalchemy as s
-    en="mysql://dipo:dipo@localhost/dipo"
-    engine=s.create_engine(en)
-    metadata=s.MetaData()
-    essential_info=s.Table(
-    "webpage_info",
-    metadata,
-    s.Column("name",s.String),
-    s.Column("desc",s.String(10)),
-    s.Column("link",s.String)
-)
-    metadata.create_all(engine)
-    with engine.connect() as conn:
-        result=conn.execute(s.select(essential_info.c))
-    return [i for i in result]
+    return [i.val() for i in db.child(child).each()]
 def mwatch(d:str,d1:str,d2:str):
     d=d.strip()
     word_count=0

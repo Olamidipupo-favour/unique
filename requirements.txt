@@ -30,3 +30,4 @@ websocket-client==0.53.0
 WebTest==2.0.34
 Werkzeug==1.0.0
 gunicorn
+pyrebase
