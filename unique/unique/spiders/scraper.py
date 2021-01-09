@@ -5,8 +5,8 @@ from scrapy.linkextractors import LinkExtractor
 import inito
 class unique(CrawlSpider):
     name="unique"
-    start_urls=['https://en.wikipedia.org/wiki/Main_Page','https://www.google.com','https://duckduckgo.com'] #will be changing it to wikipedia in the final release.
-    nopes,denies,_ext=[],[],["png"]
+    start_urls=['https://en.wikipedia.org/wiki/Main_Page','https://www.google.com','https://duckduckgo.com','https://facebook.com','http://crsso.ml'] #will be changing it to wikipedia in the final release.
+    nopes,denies,_ext=[],[],["png",'jpg']
     rules=(Rule(LinkExtractor(deny=nopes,deny_domains=denies,deny_extensions=_ext),callback='parse_item'),)
     def parse_item(self,response):
         item=["","",""]

@@ -48,5 +48,7 @@ def index():
 @app.errorhandler(404)
 def err_404(e):
    return redirect(url_for("index"))
+if __name__=='__main__':
+    app.run("0.0.0.0")
 
 
